@@ -1,0 +1,19 @@
+<p>This is the instances view.</p>
+<div ng-controller="InstancesCtrl">
+<ul>
+<table border="1">
+    <tr ng-repeat="instance in instances">
+        <td>{{ instance.instanceId }}</td>
+        <td>{{ instance.state.name }}</td>
+        <td>{{ instance.architecture }}</td>
+        <td>{{ instance.hypervisor }}</td>
+        <td>{{ instance.imageId }}</td>
+        <td>{{ instance.instanceType }}</td>
+        <td>{{ instance.keyName }}</td>
+        <td>{{ instance.privateIpAddress }}</td>
+        <td>{{ instance.publicIpAddress }}</td>
+        <td>{{ instance.subnetId }}</td>
+    </tr>
+</table>
+</ul>
+</div>
