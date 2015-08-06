@@ -15,4 +15,5 @@
  	$http.get('http://localhost:8080/instances/all').success(function(data) {
  	$scope.instances = data;
  	}); 
+
  });

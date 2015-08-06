@@ -31,6 +31,11 @@ angular
         controller: 'InstancesCtrl',
         controllerAs: 'instances'
       })
+      .when('/cloudmap', {
+        templateUrl: 'views/cloudmap.html',
+        controller: 'CloudmapCtrl',
+        controllerAs: 'cloudmap'
+      })
       .otherwise({
         redirectTo: '/'
       });

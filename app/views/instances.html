@@ -1,19 +1,66 @@
-<p>This is the instances view.</p>
 <div ng-controller="InstancesCtrl">
-<ul>
-<table border="1">
-    <tr ng-repeat="instance in instances">
-        <td>{{ instance.instanceId }}</td>
-        <td>{{ instance.state.name }}</td>
-        <td>{{ instance.architecture }}</td>
-        <td>{{ instance.hypervisor }}</td>
-        <td>{{ instance.imageId }}</td>
-        <td>{{ instance.instanceType }}</td>
-        <td>{{ instance.keyName }}</td>
-        <td>{{ instance.privateIpAddress }}</td>
-        <td>{{ instance.publicIpAddress }}</td>
-        <td>{{ instance.subnetId }}</td>
-    </tr>
-</table>
-</ul>
+	<div class="col-xs-12">
+		<table class="table table-bordered table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>State</th>
+					<th>Architecture</th>
+					<th>Hypervisor</th>
+					<th>Image Id</th>
+					<th>Size</th>
+					<th>Private Ip</th>
+					<th>Public Ip</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-toggle="modal" class="panel panel-default" ng-repeat="instance in instances">
+					<td>{{instance.instanceId}}</td>
+					<td>{{instance.state.name}}</td>
+					<td>{{instance.architecture}}</td>
+					<td>{{instance.hypervisor}}</td>
+					<td>{{instance.imageId}}</td>
+					<td>{{instance.instanceType}}</td>
+					<td>{{instance.privateIpAddress}}</td>
+					<td>{{instance.publicIpAddress}}</td>
+					<td>
+						<div class="btn-group" dropdown>
+							<button type="button" data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a data-toggle="modal" data-target="#bannerformmodal">More Info</a>
+								</li>
+								<li><a href="/#/instances">Start</a>
+								</li>
+								<li><a href="/#/instances">Stop</a>
+								</li>
+								<li><a href="/#/instances">Snapshot</a>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+<div class="modal fade bannerformmodal" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Instance:{{instance.instanceId}}</h4>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the modal.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
 </div>
