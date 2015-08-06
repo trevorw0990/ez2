@@ -15,7 +15,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-toggle="modal" class="panel panel-default" ng-repeat="instance in instances">
+				<tr ng-repeat="instance in instances">
 					<td>{{instance.instanceId}}</td>
 					<td>{{instance.state.name}}</td>
 					<td>{{instance.architecture}}</td>
@@ -47,13 +47,13 @@
 	</div>
 </div>
 </div>
-<div class="modal fade bannerformmodal" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+<div class="modal fade bannerformmodal" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="false" id="bannerformmodal">
 	<div class="modal-dialog">
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Instance:{{instance.instanceId}}</h4>
+				<h4 class="modal-title">Instance: </h4>
 			</div>
 			<div class="modal-body">
 				<p>Some text in the modal.</p>
